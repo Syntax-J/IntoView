@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style>
+    #trunk {
+      background: red;
+      height: 500px;
+      width: 500px;
+    }
+
+    #view {
+      background: skyblue;
+      height: 500px;
+      width: 500px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="trunk"></div>
+  <div id="trunk"></div>　
+  <div id="trunk"></div>　
+  <div id="trunk"></div>　　
+  <div id="view"></div>　
+  <div id="trunk"></div>　
+  <div id="trunk"></div>　　
+  <div id="trunk"></div>　
+  <div id="trunk"></div>　　
+  <script>
+    let trunk = document.getElementById("trunk");
+    let view = document.getElementById("view");
+    let handler = function () {
+      // console.log(view.getBoundingClientRect());
+
+      let top = view.getBoundingClientRect().top
+      let bottom = view.getBoundingClientRect().bottom
+      let _windowH = window.innerHeight;
+      if (top > window.innerHeight) return
+      if (bottom < 0) return
+      console.log('enter');
+    }
+    document.addEventListener("scroll", handler)
+  </script>　　　
+</body>
+
+</html>
